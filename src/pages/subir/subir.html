@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar color="morado">
+
+    <ion-buttons>
+      <button ion-button
+              (click)="viewCtrl.dismiss()">
+        Cerrar
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{ titulo | placeholder:"Crar Post"}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Titulo</ion-label>
+    <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+  </ion-item>
+
+  <ion-item  *ngIf="imgPreview">
+    <img [src]="imgPreview">
+  </ion-item>
+
+</ion-list>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+
+      <button ion-button
+              color="morado"
+              block
+              icon-left
+              (click)="seleccionar_fotod()">
+        <ion-icon name="photos"></ion-icon>
+        Seleccionar
+      </button>
+
+    </ion-col>
+
+    <ion-col>
+
+      <button ion-button
+              color="morado"
+              block
+              icon-left
+              (click)="mostrar_camara()">
+        <ion-icon name="camera" ></ion-icon>
+        Camara
+      </button>
+
+    </ion-col>
+
+  </ion-row>
+</ion-grid>
+
+</ion-content>
